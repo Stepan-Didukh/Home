@@ -1,0 +1,29 @@
+<div class="d-flex">
+  <button class="style_form" (click)="registerUser()">Register User</button>
+  <div *ngIf="statusRegisterUser">
+    <form (ngSubmit)="regUser()" #regForm="ngForm">
+      <input class="style_form" type="text" name="Name" placeholder="Name"
+             #nameValue="ngModel"
+             [(ngModel)]="newUser.Name"
+             [ngStyle]="{backgroundColor: nameValue.invalid && nameValue.dirty ? 'red' : 'green'}">
+
+      <input class="style_form" type="text" name="Surname" placeholder="Surname"
+             #SurnameValue="ngModel"
+             [(ngModel)]="newUser.Surname"
+             [ngStyle]="{backgroundColor: SurnameValue.invalid && SurnameValue.dirty ? 'red' : 'green'}">
+
+      <input class="style_form" type="text" name="Email" placeholder="Email"
+             #EmailValue="ngModel"
+             [ngStyle]="{backgroundColor: EmailValue.invalid && EmailValue.dirty ? 'red' : 'green'}"
+             [(ngModel)]="newUser.Email">
+
+      <input class="style_form" type="text" name="password" placeholder="Password"
+             #passwordValue="ngModel"
+             [ngStyle]="{backgroundColor: passwordValue.invalid && passwordValue.dirty ? 'red' : 'green'}"
+             [(ngModel)]="newUser.password">
+
+      <button class="style_form" [disabled]="regForm.invalid">Register</button>
+    </form>
+  </div>
+</div>
+{{random}}

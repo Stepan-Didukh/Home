@@ -1,0 +1,21 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.d-flex
+{
+  display: flex;
+}
+.content
+{
+  padding: 0.5rem;
+}
+.style_form
+{
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-top:0.5rem
+}
+

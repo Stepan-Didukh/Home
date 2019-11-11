@@ -1,0 +1,21 @@
+<div class="d-flex">
+  <button class="style_form" (click)="loginUser()">login User</button>
+  <br>
+  <div *ngIf="statusLoginUser">
+    <form class="d-flex" (ngSubmit)="SingInUser()">
+      <input class="style_form" type="text" name="Name" placeholder="Name"
+             [(ngModel)]="signInUser.Name"
+             #NameValue="ngModel"
+             [ngStyle]="{backgroundColor: NameValue.invalid && NameValue.dirty ? 'red' : 'green'}">
+
+      <input class="style_form" type="text" name="password" placeholder="password"
+             [(ngModel)]="signInUser.password"
+             #Password="ngModel"
+             [ngStyle]="{backgroundColor: Password.invalid && Password.dirty ? 'red' : 'green'}">
+
+      <button class="style_form">login</button>
+      <div class="style_form" *ngIf="message">{{message}}</div>
+
+    </form>
+  </div>
+</div>
